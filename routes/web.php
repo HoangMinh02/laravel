@@ -24,3 +24,28 @@ Route::get('test', function () {
 Route::get('test/a/b/c/d', function () {
     echo '<h1>d</h1>';
 });
+
+Route::get('product/detail/{id}/category/{categoryId?}', function ($id, $categoryId = 17) {
+    echo "Produdct id: $id - Category id: $categoryId";
+});
+
+Route::get('name/{name}/yearBorn/{yearBorn?}', function ($name, $yearBorn = 0) {
+    $yearBorn = date('Y');
+    echo "Name: $name - YearBorn: $yearBorn";
+});
+
+Route::get('product/create', function () {
+    return view('product.create');
+});
+
+Route::get('product/index', function () {
+    return view('product.index');
+});
+
+Route::get('product/blade', function () {
+    return view('product.scores');
+});
+
+Route::get('product/layout', function () {
+    return view('product.layout');
+});
